@@ -16,13 +16,16 @@ function init () {
 
   for (const $field of $fields) {
     const $input = $field.querySelector('input, textarea, select');
-    const listener = toggle($input, $field);
 
-    $input.addEventListener('focus', listener);
-    $input.addEventListener('focusout', listener);
+    if ($input) {
+      const listener = toggle($input, $field);
 
-    if ($input.value) {
-      listener();
+      $input.addEventListener('focus', listener);
+      $input.addEventListener('focusout', listener);
+  
+      if ($input.value) {
+        listener();
+      }
     }
   }
 

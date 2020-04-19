@@ -46,7 +46,7 @@ h1, h2, h3, p, label {
 }
 
 .field, .field-group {
-  margin-top: 2rem;
+  margin-top: 2.5rem;
 }
 
 .field-group .field-radio, .field-group .field-checkbox {
@@ -62,7 +62,6 @@ h1, h2, h3, p, label {
   border-top: 0;
   outline: none;
   border-bottom: 1px solid var(--color-main, black);
-  transition: border 0.3s linear;
   box-shadow: none;
 }
 
@@ -71,7 +70,7 @@ h1, h2, h3, p, label {
 }
 
 .field-input, .field-textarea, .field-select {
-  margin-top: 0;
+  margin-top: 0.5rem;
   padding-top: 2rem;
   position: relative;
 }
@@ -91,6 +90,10 @@ h1, h2, h3, p, label {
 }
 
 .field-textarea label {
+  bottom: 2px;
+}
+
+.field-textarea label {
   align-items: flex-start;
 }
 
@@ -103,9 +106,36 @@ h1, h2, h3, p, label {
   background: transparent;
 }
 
+.field-select select:focus ~ .field-select-icon {
+  bottom: 2px;
+}
+
+.field-select-icon {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  background-color: var(--color-secondary, white);
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 45px;
+  width: 45px;
+  position: absolute;
+  z-index: 1;
+  right: 0rem;
+  bottom: 1px;
+  pointer-events: none;
+}
+
+.field-select-icon img {
+  width: 30px;
+  height: 30px;
+}
+
 .field textarea {
   resize: none;
   min-height: 100px;
+  font-size: inherit;
+  font-family: inherit;
 }
 
 .content, .header {
@@ -118,6 +148,7 @@ h1, h2, h3, p, label {
 
 .header {
   text-align: center;
+  margin-bottom: 1rem;
 }
 
 .btn {
