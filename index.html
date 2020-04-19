@@ -13,13 +13,48 @@
     <p id="description">This is a demo page for a simple js validator</p>
   </header>
   <main>
-    <form id="survey-form">
+    <form id="survey-form" action="/">
       <div class="field">
-        <label for="name">Name</label>
-        <input type="text" name="name" id="name">
+        <label id="name-label" for="name">Name</label>
+        <input type="text" placeholder="What's your name?" name="name" id="name" required>
       </div>
+      <div class="flied">
+        <label id="email-label" for="email">Email</label>
+        <input type="email" placeholder="Have an email?" name="email" id="email" required>
+      </div>
+      <div class="field">
+        <label id="number-label" for="number">Age</label>
+        <input type="number" placeholder="How old are you?" name="age" id="number" min="0" max="100">
+      </div>
+      <div class="field">
+        <label for="dropdown">Country</label>
+        <select name="country" id="dropdown">
+          <option value="ua">Ukraine</option>
+          <option value="us">United States</option>
+          <option value="se">Sweden</option>
+          <option value="uk">United Kingdom</option>
+        </select>
+      </div>
+      <div class="field">
+        <label for="male">Male</label>
+        <input type="radio" name="gender" id="male" value="male"><br>
+        <label for="female">Female</label>
+        <input type="radio" name="gender" id="female" value="female">
+      </div>
+      <div class="field">
+        <label for="notify_email">By email</label>
+        <input type="checkbox" name="notify" id="notify_email" value="email"><br>
+        <label for="notify_phone">By phone</label>
+        <input type="checkbox" name="notify" id="notify_phone" value="phone">
+      </div>
+      <div class="field">
+        <label for="message">Message</label>
+        <textarea name="message" id="message" cols="30" rows="10"></textarea>
+      </div>
+      <button type="submit" id="submit" >Submit</button>
     </form>
   </main>
   <script src="js/script.js"></script>
+  <script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script>
 </body>
 </html>
