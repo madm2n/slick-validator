@@ -5,6 +5,10 @@
   --font-weight-bold: 700;
 }
 
+* {
+  box-sizing: border-box;
+}
+
 html {
   font-size: 10px;;
 }
@@ -14,13 +18,16 @@ body {
   padding: 0;
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
   color: var(--font-color-main, black);
   font-family: var(--font-family, monospace);
   font-weight: var(--font-weight-normal, normal);
-  font-size: 1.6rem;
+  font-size: 2rem;
 }
 
-label, p {
+label, p, button {
   font-size: inherit;
 }
 
@@ -32,6 +39,25 @@ h1, h2, h3, p, label {
 .field-input, .field-select, .field-textarea {
   display: flex;
   flex-direction: column;
+}
+
+.field, .field-group {
+  margin-bottom: 1.5rem;
+}
+
+.field-group .field-radio, .field-group .field-checkbox {
+  margin-bottom: 0;
+}
+
+.field-input input, .field-select select, .field-textarea textarea {
+  height: 45px;
+  font-size: 2rem;
+  padding: 0.5rem 1rem;
+}
+
+.field textarea {
+  resize: none;
+  min-height: 100px;
 }
 
 .content, .header {

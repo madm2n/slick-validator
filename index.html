@@ -18,7 +18,7 @@
         <label id="name-label" for="name">Name</label>
         <input type="text" placeholder="What's your name?" name="name" id="name" required>
       </div>
-      <div class="flied field-input">
+      <div class="field field-input">
         <label id="email-label" for="email">Email</label>
         <input type="email" placeholder="Have an email?" name="email" id="email" required>
       </div>
@@ -35,25 +35,31 @@
           <option value="uk">United Kingdom</option>
         </select>
       </div>
-      <div class="field field-radio">
-        <input type="radio" name="gender" id="male" value="male">
-        <label for="male">Male</label>
+      <div class="field-group">
+        <p class="field-group-title">Gender</p>
+        <div class="field field-radio">
+          <input type="radio" name="gender" id="male" value="male">
+          <label for="male">Male</label>
+        </div>
+        <div class="field field-radio">
+          <input type="radio" name="gender" id="female" value="female">
+          <label for="female">Female</label>
+        </div>
       </div>
-      <div class="field field-radio">
-        <input type="radio" name="gender" id="female" value="female">
-        <label for="female">Female</label>
-      </div>
-      <div class="field field-checkbox">
-        <input type="checkbox" name="notify" id="notify_email" value="email">
-        <label for="notify_email">By email</label>
-      </div>
-      <div class="field field-checkbox">
-        <input type="checkbox" name="notify" id="notify_phone" value="phone">
-        <label for="notify_phone">By phone</label>
+      <div class="field-group">
+        <p class="field-group-title">How wold you like to be notified?</p>
+        <div class="field field-checkbox">
+          <input type="checkbox" name="notify" id="notify_email" value="email">
+          <label for="notify_email">By email</label>
+        </div>
+        <div class="field field-checkbox">
+          <input type="checkbox" name="notify" id="notify_phone" value="phone">
+          <label for="notify_phone">By phone</label>
+        </div>
       </div>
       <div class="field field-textarea">
         <label for="message">Message</label>
-        <textarea name="message" id="message" cols="30" rows="10"></textarea>
+        <textarea name="message" id="message"></textarea>
       </div>
       <button type="submit" id="submit" >Submit</button>
     </form>
