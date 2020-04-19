@@ -3,6 +3,10 @@
   --font-color-main: #000000;
   --font-weight-normal: 400;
   --font-weight-bold: 700;
+
+  --color-main: #000000;
+  --color-secondary: #ffffff;
+  --color-brand: #673ab7;
 }
 
 * {
@@ -42,17 +46,61 @@ h1, h2, h3, p, label {
 }
 
 .field, .field-group {
-  margin-bottom: 1.5rem;
+  margin-top: 2rem;
 }
 
 .field-group .field-radio, .field-group .field-checkbox {
-  margin-bottom: 0;
+  margin-top: 0;
 }
 
 .field-input input, .field-select select, .field-textarea textarea {
   height: 45px;
   font-size: 2rem;
   padding: 0.5rem 1rem;
+  border-left: none;
+  border-right: none;
+  border-top: 0;
+  outline: none;
+  border-bottom: 1px solid var(--color-main, black);
+  transition: border 0.3s linear;
+  box-shadow: none;
+}
+
+.field-input input:focus, .field-textarea textarea:focus, .field-select select:focus {
+  border-bottom: 2px solid var(--color-brand, indigo);
+}
+
+.field-input, .field-textarea, .field-select {
+  margin-top: 0;
+  padding-top: 2rem;
+  position: relative;
+}
+
+.field-input label, .field-textarea label, .field-select label {
+  padding: 0.5rem 1rem;
+  display: flex;
+  align-items: center;
+  position: absolute;
+  height: auto;
+  background: var(--color-secondary, white);
+  left: 0;
+  right: 0;
+  top: 1.5rem;
+  bottom: 1px;
+  transition: top 0.3s, bottom 0.3s, font-size 0.3s;
+}
+
+.field-textarea label {
+  align-items: flex-start;
+}
+
+.field-input.active label, .field-textarea.active label, .field-select.active label {
+  color: var(--color-brand, indigo);
+  top: 0;
+  bottom: auto;
+  padding: 0.4rem 0.5rem 0 0.5rem;
+  font-size: 1.2rem;
+  background: transparent;
 }
 
 .field textarea {
