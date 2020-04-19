@@ -14,7 +14,7 @@
 }
 
 html {
-  font-size: 10px;;
+  font-size: 10px;
 }
 
 body {
@@ -61,12 +61,12 @@ h1, h2, h3, p, label {
   border-right: none;
   border-top: 0;
   outline: none;
-  border-bottom: 1px solid var(--color-main, black);
+  border-bottom: 0.1rem solid var(--color-main, black);
   box-shadow: none;
 }
 
 .field-input input:focus, .field-textarea textarea:focus, .field-select select:focus {
-  border-bottom: 2px solid var(--color-brand, indigo);
+  border-bottom: 0.2rem solid var(--color-brand, indigo);
 }
 
 .field-input, .field-textarea, .field-select {
@@ -85,12 +85,12 @@ h1, h2, h3, p, label {
   left: 0;
   right: 0;
   top: 1.5rem;
-  bottom: 1px;
+  bottom: 0.1rem;
   transition: top 0.3s, bottom 0.3s, font-size 0.3s;
 }
 
-.field-textarea label {
-  bottom: 2px;
+.field-textarea label, .field-select select:focus ~ .field-select-icon {
+  bottom: 0.2rem;
 }
 
 .field-textarea label {
@@ -106,10 +106,6 @@ h1, h2, h3, p, label {
   background: transparent;
 }
 
-.field-select select:focus ~ .field-select-icon {
-  bottom: 2px;
-}
-
 .field-select-icon {
   display: flex;
   align-items: center;
@@ -122,18 +118,18 @@ h1, h2, h3, p, label {
   position: absolute;
   z-index: 1;
   right: 0rem;
-  bottom: 1px;
+  bottom: 0.1rem;
   pointer-events: none;
 }
 
 .field-select-icon img {
-  width: 30px;
-  height: 30px;
+  width: 3rem;
+  height: 3rem;
 }
 
 .field textarea {
   resize: none;
-  min-height: 100px;
+  min-height: 10rem;
   font-size: inherit;
   font-family: inherit;
 }
@@ -141,7 +137,7 @@ h1, h2, h3, p, label {
 .content, .header {
   display: flex;
   flex-direction: column;
-  max-width: 600px;
+  max-width: 60rem;
   width: 100%;
   margin: 0 auto;
 }
