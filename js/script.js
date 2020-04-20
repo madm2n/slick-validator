@@ -113,15 +113,16 @@ function init () {
       for (const $field of $fields) {
         const $error = $getError($field);
         const $input = $getInput($field);
+        const message = errors[$input.name];
 
-        if (errors[$input.name]) {
+        if (message) {
           $field.classList.add(ERROR_CLASS);
         } else {
           $field.classList.remove(ERROR_CLASS);
         }
 
-        if ($error && errors[$input.name]) {
-          $error.innerText = errors[$input.name];
+        if ($error && message) {
+          $error.innerText = message;
         } else if ($error) {
           $error.innerText = '';
         }
