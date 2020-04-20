@@ -30,12 +30,12 @@ function init () {
     }
   };
   
+  const Validate = () => new Validation(fields(), rules, messages);
   const rules = {};
   const messages = {
     name: 'Please fill in your name.',
     email: 'Provide valid email address.'
   };
-  const Validate = () => new Validation(fields(), rules, messages);
 
   function fields() {
     const fields = {};
