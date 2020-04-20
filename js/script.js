@@ -11,7 +11,7 @@ Validator.register({
 Validator.register({
   name: 'email',
   fn: (value) => {
-    return !value ||  /(.+)@(.+){2,}\.(.+){2,}/.test(value);
+    return !value || /(.+)@(.+){2,}\.(.+){2,}/.test(value);
   }
 })
 
