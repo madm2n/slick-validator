@@ -13,7 +13,7 @@ Validator.register({
   fn: (value) => {
     return !value || /(.+)@(.+){2,}\.(.+){2,}/.test(value);
   }
-})
+});
 
 function init () {
   const $submit = document.getElementById('submit');
