@@ -45,7 +45,7 @@ h1, h2, h3, p, label {
   flex-direction: column;
 }
 
-.field, .field-group {
+.field, .field-group, .submit-button {
   margin-top: 2.5rem;
 }
 
