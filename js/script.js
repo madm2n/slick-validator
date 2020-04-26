@@ -16,7 +16,7 @@ Validator.register({
   }
 });
 
-function init () {
+function init() {
   const $submit = document.getElementById('submit');
   const $form = document.getElementById('survey-form');
   const $fields = document.getElementsByClassName('field');
@@ -30,7 +30,7 @@ function init () {
       return $input.getAttribute('type') === 'email';
     }
   };
-  
+
   const Validate = () => new Validation(fields(), rules, messages);
   const rules = {};
   const messages = {
@@ -96,7 +96,7 @@ function init () {
 
       $input.addEventListener('focus', listener);
       $input.addEventListener('focusout', listener);
-  
+
       if (typeof rules[$input.name] === 'undefined') {
         rules[$input.name] = [];
 
@@ -105,7 +105,7 @@ function init () {
             rules[$input.name].push(name);
           }
         }
-      } 
+      }
 
       if ($input.value) {
         listener();
@@ -120,7 +120,7 @@ function init () {
 
     if (!validator.validate()) {
       const errors = validator.errors();
-      
+
       for (const $field of $fields) {
         const $error = $getError($field);
         const $input = $getInput($field);
