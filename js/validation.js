@@ -17,7 +17,7 @@ class Validation {
 
         for (const name of validators) {
           if (Validator.registered(name) && !Validator.validate({ name, value: this._fields[fieldName] })) {
-            this._errors[fieldName] = this._messages[fieldName];
+            this._errors[fieldName] = this._messages[fieldName] ? this._messages[fieldName] : 'Value is invalid!';
           }
         }
       }

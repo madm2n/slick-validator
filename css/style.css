@@ -7,6 +7,7 @@
   --color-main: #000000;
   --color-secondary: #ffffff;
   --color-brand: #673ab7;
+  --color-error: 	#FF6347;
 }
 
 * {
@@ -19,7 +20,7 @@ html {
 
 body {
   margin: 0;
-  padding: 0;
+  padding: 2rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -49,8 +50,37 @@ h1, h2, h3, p, label {
   margin-top: 2.5rem;
 }
 
+.field {
+  position: relative;
+}
+
 .field-group .field-radio, .field-group .field-checkbox {
   margin-top: 0;
+}
+
+.field.error input, .field.error textarea, .field.error select {
+  border-color: var(--color-error);
+}
+
+.field.error .error-message {
+  height: 2rem;
+}
+
+.field-group.field .error-message {
+  padding: 0;
+}
+
+.error-message {
+  left: 0;
+  right: 0;
+  bottom: 0;
+  position: absolute;
+  color: var(--color-error);
+  font-size: 1.5rem;
+  padding: 0 1rem;
+  height: 0;
+  overflow: hidden;
+  transition: height 0.3s;
 }
 
 .field-input input, .field-select select, .field-textarea textarea {
@@ -69,9 +99,9 @@ h1, h2, h3, p, label {
   border-bottom: 0.2rem solid var(--color-brand, indigo);
 }
 
-.field-input, .field-textarea, .field-select {
-  margin-top: 0.5rem;
-  padding-top: 2rem;
+.field {
+  margin-top: 0;
+  padding: 2rem 0 2rem 0;
   position: relative;
 }
 
@@ -85,12 +115,12 @@ h1, h2, h3, p, label {
   left: 0;
   right: 0;
   top: 1.5rem;
-  bottom: 0.1rem;
+  bottom: 2.1rem;
   transition: top 0.3s, bottom 0.3s, font-size 0.3s;
 }
 
 .field-textarea label, .field-select select:focus ~ .field-select-icon {
-  bottom: 0.2rem;
+  bottom: 2.2rem;
 }
 
 .field-textarea label {
@@ -118,7 +148,7 @@ h1, h2, h3, p, label {
   position: absolute;
   z-index: 1;
   right: 0rem;
-  bottom: 0.1rem;
+  bottom: 2.1rem;
   pointer-events: none;
 }
 

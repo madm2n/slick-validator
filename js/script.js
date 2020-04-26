@@ -1,5 +1,6 @@
 const ACTIVE_CLASS = 'active';
 const ERROR_CLASS = 'error';
+const ERROR_MESSAGE_CLASS = 'error-message';
 
 Validator.register({
   name: 'required',
@@ -34,25 +35,31 @@ function init () {
   const rules = {};
   const messages = {
     name: 'Please fill in your name.',
-    email: 'Provide valid email address.'
+    email: 'Provide valid email address.',
+    gender: 'Please select one.',
+    message: 'We\'d like to hear from you.'
   };
 
   function fields() {
     const fields = {};
 
     for (const $field of $fields) {
-      const $input = $getInput($field);
+      const $inputs = $getInputs($field);
 
-      if (!$input || !$input.name) {
-        continue
-      }
-
-      if (checked.includes($input.type) && $input.checked) {
-        fields[$input.name] = $input.value
-      }
-
-      if (!checked.includes($input.type)) {
-        fields[$input.name] = $input.value
+      for (const $input of $inputs) {
+        if (!$input || !$input.name) {
+          continue
+        }
+  
+        if (checked.includes($input.type) && $input.checked) {
+          fields[$input.name] = $input.value
+        } else {
+          fields[$input.name] = '';
+        }
+  
+        if (!checked.includes($input.type)) {
+          fields[$input.name] = $input.value
+        }
       }
     }
 
@@ -73,8 +80,12 @@ function init () {
     return $field.querySelector('input, textarea, select');
   }
 
+  function $getInputs($field) {
+    return $field.querySelectorAll('input, textarea, select');
+  }
+
   function $getError($field) {
-    return $field.querySelector(`.${ERROR_CLASS}`);
+    return $field.querySelector(`.${ERROR_MESSAGE_CLASS}`);
   }
 
   for (const $field of $fields) {

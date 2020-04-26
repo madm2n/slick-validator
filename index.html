@@ -17,21 +17,21 @@
       <div class="field field-input">
         <label id="name-label" for="name">Name</label>
         <input type="text" placeholder="What's your name?" name="name" id="name" required>
-        <span class="error"></span>
+        <span class="error-message"></span>
       </div>
       <div class="field field-input">
         <label id="email-label" for="email">Email</label>
         <input type="email" placeholder="Have an email?" name="email" id="email" required>
-        <span class="error"></span>
+        <span class="error-message"></span>
       </div>
       <div class="field field-input">
         <label id="number-label" for="number">Age</label>
-        <input type="number" placeholder="How old are you?" name="age" id="number" min="0" max="100">
-        <span class="error"></span>
+        <input type="number" placeholder="How old are you?" name="age" id="number" min="0" max="100" required>
+        <span class="error-message"></span>
       </div>
       <div class="field field-select">
         <label for="dropdown">Country</label>
-        <select name="country" id="dropdown">
+        <select name="country" id="dropdown" required>
           <option value="">Where are you from?</option>
           <option value="ua">Ukraine</option>
           <option value="us">United States</option>
@@ -41,36 +41,36 @@
         <div class="field-select-icon">
           <img src="img/down.svg" alt="Arrow pointing dow">
         </div>
-        <span class="error"></span>
+        <span class="error-message"></span>
       </div>
-      <div class="field-group">
+      <div class="field field-group">
         <p class="field-group-title">Gender</p>
-        <div class="field field-radio">
-          <input type="radio" name="gender" id="male" value="male">
+        <div class="field-radio">
+          <input type="radio" name="gender" id="male" value="male" required>
           <label for="male">Male</label>
         </div>
-        <div class="field field-radio">
-          <input type="radio" name="gender" id="female" value="female">
+        <div class="field-radio">
+          <input type="radio" name="gender" id="female" value="female ">
           <label for="female">Female</label>
         </div>
-        <span class="error"></span>
+        <span class="error-message"></span>
       </div>
-      <div class="field-group">
+      <div class="field field-group">
         <p class="field-group-title">How wold you like to be notified?</p>
-        <div class="field field-checkbox">
+        <div class="field-checkbox">
           <input type="checkbox" name="notify" id="notify_email" value="email">
           <label for="notify_email">By email</label>
         </div>
-        <div class="field field-checkbox">
+        <div class="field-checkbox">
           <input type="checkbox" name="notify" id="notify_phone" value="phone">
           <label for="notify_phone">By phone</label>
         </div>
-        <span class="error"></span>
+        <span class="error-message"></span>
       </div>
       <div class="field field-textarea">
         <label for="message">Message</label>
-        <textarea name="message" id="message"></textarea>
-        <span class="error"></span>
+        <textarea name="message" id="message" required></textarea>
+        <span class="error-message"></span>
       </div>
       <div class="submit-button">
         <button class="btn" type="submit" id="submit" >Submit</button>
